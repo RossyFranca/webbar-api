@@ -1,0 +1,26 @@
+<div class="login">
+  <div class="col-md-6 col-md-offset-3">
+    <h2>login</h2>
+    <!--email-->
+    <form name="form" novalidate>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" name="email" [(ngModel)]="model.email" required />
+        <div *ngIf="" class="help-block">email é necessário</div>
+      </div>
+      <!--senha-->
+      <div>
+        <label for="password">Senha</label>
+        <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" />
+        <div *ngIf="" class="help-block">Password is required</div>
+      </div>
+
+      <!--Submit-->
+      <div class="form-group">
+        <button (click)="login()" class="btn btn-primary">Login</button>
+        <img *ngIf="loading" />
+        <a [routerLink]="['/register']" class="btn btn-link">Register</a>
+      </div>
+    </form>
+  </div>
+</div>
